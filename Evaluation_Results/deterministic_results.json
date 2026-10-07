@@ -1,0 +1,243 @@
+{
+  "consistency": {
+    "v1": {
+      "version": "v1",
+      "findings": [],
+      "review_required": true,
+      "rules": [
+        "unknown_component",
+        "unknown_interface",
+        "unit_mismatch"
+      ],
+      "limitation": "Only declared records are checked. No AUTOSAR schema/conformance or safety certification is performed."
+    },
+    "v2": {
+      "version": "v2",
+      "findings": [
+        {
+          "rule": "unit_mismatch",
+          "entity": "SteeringAngle",
+          "details": "Producer unit rad differs from consumer unit deg",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      ],
+      "review_required": true,
+      "rules": [
+        "unknown_component",
+        "unknown_interface",
+        "unit_mismatch"
+      ],
+      "limitation": "Only declared records are checked. No AUTOSAR schema/conformance or safety certification is performed."
+    }
+  },
+  "impact": {
+    "component": "VehicleStateProvider",
+    "version": "v2",
+    "affected": [
+      {
+        "component": "DiagnosticManager",
+        "path": [
+          {
+            "source": "VehicleStateProvider",
+            "target": "SteeringController",
+            "signal": "VehicleSpeed",
+            "interface": "VehicleSpeedIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          },
+          {
+            "source": "SteeringController",
+            "target": "SafetyMonitor",
+            "signal": "SteeringAngle",
+            "interface": "SteeringAngleIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          },
+          {
+            "source": "SafetyMonitor",
+            "target": "DiagnosticManager",
+            "signal": "FaultStatus",
+            "interface": "DiagnosticStatusIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          }
+        ]
+      },
+      {
+        "component": "SafetyMonitor",
+        "path": [
+          {
+            "source": "VehicleStateProvider",
+            "target": "SteeringController",
+            "signal": "VehicleSpeed",
+            "interface": "VehicleSpeedIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          },
+          {
+            "source": "SteeringController",
+            "target": "SafetyMonitor",
+            "signal": "SteeringAngle",
+            "interface": "SteeringAngleIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          }
+        ]
+      },
+      {
+        "component": "SteeringController",
+        "path": [
+          {
+            "source": "VehicleStateProvider",
+            "target": "SteeringController",
+            "signal": "VehicleSpeed",
+            "interface": "VehicleSpeedIf",
+            "citation": "SYN-HLD-001:v2:p4:c1"
+          }
+        ]
+      }
+    ],
+    "review_required": true,
+    "limitation": "Graph reachability is potential downstream impact, not proof of a defect or quantitative risk."
+  },
+  "comparison": {
+    "from_version": "v1",
+    "to_version": "v2",
+    "changes": [
+      {
+        "kind": "added",
+        "entity": "DiagnosticManager",
+        "record": {
+          "kind": "Component",
+          "name": "DiagnosticManager",
+          "attributes": {
+            "Role": "consumes fault status for diagnostic review",
+            "Owner": "Diagnostics",
+            "RateMs": "50"
+          },
+          "citation": "SYN-HLD-001:v2:p2:c1"
+        }
+      },
+      {
+        "kind": "added",
+        "entity": "DiagnosticStatusIf",
+        "record": {
+          "kind": "Interface",
+          "name": "DiagnosticStatusIf",
+          "attributes": {
+            "Direction": "sender-receiver",
+            "DataElement": "FaultStatus",
+            "Type": "uint8"
+          },
+          "citation": "SYN-HLD-001:v2:p3:c1"
+        }
+      },
+      {
+        "kind": "added",
+        "entity": "FaultIn",
+        "record": {
+          "kind": "Port",
+          "name": "FaultIn",
+          "attributes": {
+            "Component": "DiagnosticManager",
+            "Direction": "required",
+            "Interface": "DiagnosticStatusIf"
+          },
+          "citation": "SYN-HLD-001:v2:p5:c1"
+        }
+      },
+      {
+        "kind": "added",
+        "entity": "FaultOut",
+        "record": {
+          "kind": "Port",
+          "name": "FaultOut",
+          "attributes": {
+            "Component": "SafetyMonitor",
+            "Direction": "provided",
+            "Interface": "DiagnosticStatusIf"
+          },
+          "citation": "SYN-HLD-001:v2:p5:c1"
+        }
+      },
+      {
+        "kind": "added",
+        "entity": "FaultStatus",
+        "record": {
+          "kind": "Signal",
+          "name": "FaultStatus",
+          "attributes": {
+            "Producer": "SafetyMonitor",
+            "Consumer": "DiagnosticManager",
+            "Interface": "DiagnosticStatusIf",
+            "Type": "uint8",
+            "ProducerUnit": "status_code",
+            "ConsumerUnit": "status_code",
+            "PeriodMs": "50"
+          },
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      },
+      {
+        "kind": "modified",
+        "entity": "SteeringAngle",
+        "before": {
+          "kind": "Signal",
+          "name": "SteeringAngle",
+          "attributes": {
+            "Producer": "SteeringController",
+            "Consumer": "SafetyMonitor",
+            "Interface": "SteeringAngleIf",
+            "Type": "float32",
+            "ProducerUnit": "deg",
+            "ConsumerUnit": "deg",
+            "PeriodMs": "10"
+          },
+          "citation": "SYN-HLD-001:v1:p4:c1"
+        },
+        "after": {
+          "kind": "Signal",
+          "name": "SteeringAngle",
+          "attributes": {
+            "Producer": "SteeringController",
+            "Consumer": "SafetyMonitor",
+            "Interface": "SteeringAngleIf",
+            "Type": "float32",
+            "ProducerUnit": "rad",
+            "ConsumerUnit": "deg",
+            "PeriodMs": "10"
+          },
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      },
+      {
+        "kind": "modified",
+        "entity": "VehicleSpeed",
+        "before": {
+          "kind": "Signal",
+          "name": "VehicleSpeed",
+          "attributes": {
+            "Producer": "VehicleStateProvider",
+            "Consumer": "SteeringController",
+            "Interface": "VehicleSpeedIf",
+            "Type": "float32",
+            "ProducerUnit": "km_per_h",
+            "ConsumerUnit": "km_per_h",
+            "PeriodMs": "20"
+          },
+          "citation": "SYN-HLD-001:v1:p4:c1"
+        },
+        "after": {
+          "kind": "Signal",
+          "name": "VehicleSpeed",
+          "attributes": {
+            "Producer": "VehicleStateProvider",
+            "Consumer": "SteeringController",
+            "Interface": "VehicleSpeedIf",
+            "Type": "float32",
+            "ProducerUnit": "km_per_h",
+            "ConsumerUnit": "km_per_h",
+            "PeriodMs": "10"
+          },
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      }
+    ],
+    "review_required": true
+  }
+}

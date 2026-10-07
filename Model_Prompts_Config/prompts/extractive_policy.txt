@@ -1,0 +1,1 @@
+The tested offline backend does not execute an LLM prompt. It uses normalized TF-IDF cosine retrieval and copies at most two relevant evidence lines per retrieved chunk. Each copied line carries its source chunk ID. Unknown query terms trigger conservative abstention. Fabrication/override requests trigger abstention. The model system prompt is used only in optional Ollama mode.

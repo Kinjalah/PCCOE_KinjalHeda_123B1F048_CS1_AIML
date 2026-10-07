@@ -1,0 +1,77 @@
+{
+  "evaluated_at_utc": "2026-10-07T05:12:29.999323+00:00",
+  "application_version": "1.0.0",
+  "backend": "extractive",
+  "pretrained_model_run_verified": false,
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "index_sha256": "0e12995f72963244cd371702ba911b61e2cfa9a8c2a4b7861aa8b12975fd19df",
+  "dataset": "AUTOARCH-SYN-001; two synthetic versions, seven sections each",
+  "qa": {
+    "total": 21,
+    "passed": 20,
+    "pass_rate": 0.9523809523809523,
+    "failed_ids": [
+      "Q21"
+    ]
+  },
+  "retrieval": {
+    "k": 3,
+    "answerable_questions": 17,
+    "reference_hits": 16,
+    "hit_rate_at_k": 0.9411764705882353
+  },
+  "citations": {
+    "checked": 90,
+    "valid_source_ids_and_versions": 90,
+    "source_id_accuracy": 1.0,
+    "exact_source_line_claims": 90,
+    "total_claims": 90,
+    "exact_copy_rate": 1.0,
+    "meaning": "Exact copied-source containment in extractive mode; not an independent semantic faithfulness score"
+  },
+  "abstention": {
+    "expected": 4,
+    "correct": 4,
+    "success_rate": 1.0
+  },
+  "extraction": {
+    "v1": {
+      "true_positive": 11,
+      "predicted": 11,
+      "reference": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive": [],
+      "false_negative": []
+    },
+    "v2": {
+      "true_positive": 16,
+      "predicted": 16,
+      "reference": 16,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive": [],
+      "false_negative": []
+    }
+  },
+  "deterministic_checks": {
+    "unit_mismatch_seed_pass": true,
+    "dependency_reachability_pass": true,
+    "revision_change_checks_pass": true
+  },
+  "latency": {
+    "median_ms": 0.202,
+    "max_ms": 0.738,
+    "min_ms": 0.002,
+    "scope": "engine query only; excludes startup, browser/network and ingestion; one run per question"
+  },
+  "limitations": [
+    "Small synthetic self-authored reference set; no independent automotive expert validation",
+    "Lexical baseline is not a pretrained model or an LLM",
+    "Conservative unknown-term guard can refuse valid paraphrases",
+    "Source copying proves traceability, not usefulness or full answer completeness",
+    "OCR, ARXML conformance, authentication/RBAC and production safety validation are not implemented",
+    "Local pretrained-model mode must be installed and evaluated separately"
+  ]
+}

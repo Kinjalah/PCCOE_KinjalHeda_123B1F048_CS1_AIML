@@ -1,0 +1,14 @@
+{
+  "backend": "ollama",
+  "generation_model": "qwen2.5:1.5b",
+  "embedding_model": "nomic-embed-text:v1.5",
+  "ollama_url": "http://127.0.0.1:11434",
+  "model_timeout_seconds": 60,
+  "top_k": 3,
+  "retrieval_threshold": 0.25,
+  "hosting": "local Ollama",
+  "pretrained_model_run_verified": false,
+  "embedding_document_prefix": "search_document: ",
+  "embedding_query_prefix": "search_query: ",
+  "submission_status": "offline baseline verified; pretrained mode not executed"
+}

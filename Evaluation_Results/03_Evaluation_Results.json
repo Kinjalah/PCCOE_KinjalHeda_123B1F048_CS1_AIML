@@ -1,0 +1,37 @@
+{
+  "backend": "extractive",
+  "qa": {
+    "total": 21,
+    "passed": 20,
+    "pass_rate": 0.9523809523809523,
+    "failed_ids": [
+      "Q21"
+    ]
+  },
+  "retrieval": {
+    "k": 3,
+    "answerable_questions": 17,
+    "reference_hits": 16,
+    "hit_rate_at_k": 0.9411764705882353
+  },
+  "citations": {
+    "checked": 90,
+    "valid_source_ids_and_versions": 90,
+    "source_id_accuracy": 1.0,
+    "exact_source_line_claims": 90,
+    "total_claims": 90,
+    "exact_copy_rate": 1.0,
+    "meaning": "Exact copied-source containment in extractive mode; not an independent semantic faithfulness score"
+  },
+  "abstention": {
+    "expected": 4,
+    "correct": 4,
+    "success_rate": 1.0
+  },
+  "latency": {
+    "median_ms": 0.202,
+    "max_ms": 0.738,
+    "min_ms": 0.002,
+    "scope": "engine query only; excludes startup, browser/network and ingestion; one run per question"
+  }
+}

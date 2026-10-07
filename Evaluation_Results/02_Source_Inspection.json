@@ -1,0 +1,7 @@
+{
+  "id": "SYN-HLD-001:v2:p4:c1",
+  "section": "4 Signal contracts",
+  "page": 4,
+  "version": "v2",
+  "text": "Signal: VehicleSpeed | Producer: VehicleStateProvider | Consumer: SteeringController | Interface: VehicleSpeedIf | Type: float32 | ProducerUnit: km_per_h | ConsumerUnit: km_per_h | PeriodMs: 10\nSignal: SteeringAngle | Producer: SteeringController | Consumer: SafetyMonitor | Interface: SteeringAngleIf | Type: float32 | ProducerUnit: rad | ConsumerUnit: deg | PeriodMs: 10\nSignal: FaultStatus | Producer: SafetyMonitor | Consumer: DiagnosticManager | Interface: DiagnosticStatusIf | Type: uint8 | ProducerUnit: status_code | ConsumerUnit: status_code | PeriodMs: 50"
+}

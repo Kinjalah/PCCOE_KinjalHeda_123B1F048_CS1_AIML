@@ -1,0 +1,65 @@
+{
+  "component": "VehicleStateProvider",
+  "version": "v2",
+  "affected": [
+    {
+      "component": "DiagnosticManager",
+      "path": [
+        {
+          "source": "VehicleStateProvider",
+          "target": "SteeringController",
+          "signal": "VehicleSpeed",
+          "interface": "VehicleSpeedIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        },
+        {
+          "source": "SteeringController",
+          "target": "SafetyMonitor",
+          "signal": "SteeringAngle",
+          "interface": "SteeringAngleIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        },
+        {
+          "source": "SafetyMonitor",
+          "target": "DiagnosticManager",
+          "signal": "FaultStatus",
+          "interface": "DiagnosticStatusIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      ]
+    },
+    {
+      "component": "SafetyMonitor",
+      "path": [
+        {
+          "source": "VehicleStateProvider",
+          "target": "SteeringController",
+          "signal": "VehicleSpeed",
+          "interface": "VehicleSpeedIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        },
+        {
+          "source": "SteeringController",
+          "target": "SafetyMonitor",
+          "signal": "SteeringAngle",
+          "interface": "SteeringAngleIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      ]
+    },
+    {
+      "component": "SteeringController",
+      "path": [
+        {
+          "source": "VehicleStateProvider",
+          "target": "SteeringController",
+          "signal": "VehicleSpeed",
+          "interface": "VehicleSpeedIf",
+          "citation": "SYN-HLD-001:v2:p4:c1"
+        }
+      ]
+    }
+  ],
+  "review_required": true,
+  "limitation": "Graph reachability is potential downstream impact, not proof of a defect or quantitative risk."
+}

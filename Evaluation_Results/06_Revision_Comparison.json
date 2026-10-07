@@ -1,0 +1,70 @@
+{
+  "from_version": "v1",
+  "to_version": "v2",
+  "changes": [
+    {
+      "kind": "modified",
+      "entity": "SteeringAngle",
+      "before": {
+        "kind": "Signal",
+        "name": "SteeringAngle",
+        "attributes": {
+          "Producer": "SteeringController",
+          "Consumer": "SafetyMonitor",
+          "Interface": "SteeringAngleIf",
+          "Type": "float32",
+          "ProducerUnit": "deg",
+          "ConsumerUnit": "deg",
+          "PeriodMs": "10"
+        },
+        "citation": "SYN-HLD-001:v1:p4:c1"
+      },
+      "after": {
+        "kind": "Signal",
+        "name": "SteeringAngle",
+        "attributes": {
+          "Producer": "SteeringController",
+          "Consumer": "SafetyMonitor",
+          "Interface": "SteeringAngleIf",
+          "Type": "float32",
+          "ProducerUnit": "rad",
+          "ConsumerUnit": "deg",
+          "PeriodMs": "10"
+        },
+        "citation": "SYN-HLD-001:v2:p4:c1"
+      }
+    },
+    {
+      "kind": "modified",
+      "entity": "VehicleSpeed",
+      "before": {
+        "kind": "Signal",
+        "name": "VehicleSpeed",
+        "attributes": {
+          "Producer": "VehicleStateProvider",
+          "Consumer": "SteeringController",
+          "Interface": "VehicleSpeedIf",
+          "Type": "float32",
+          "ProducerUnit": "km_per_h",
+          "ConsumerUnit": "km_per_h",
+          "PeriodMs": "20"
+        },
+        "citation": "SYN-HLD-001:v1:p4:c1"
+      },
+      "after": {
+        "kind": "Signal",
+        "name": "VehicleSpeed",
+        "attributes": {
+          "Producer": "VehicleStateProvider",
+          "Consumer": "SteeringController",
+          "Interface": "VehicleSpeedIf",
+          "Type": "float32",
+          "ProducerUnit": "km_per_h",
+          "ConsumerUnit": "km_per_h",
+          "PeriodMs": "10"
+        },
+        "citation": "SYN-HLD-001:v2:p4:c1"
+      }
+    }
+  ]
+}

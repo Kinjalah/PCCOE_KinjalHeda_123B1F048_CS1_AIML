@@ -1,0 +1,11 @@
+{
+  "core_runtime": "Python standard library; no third-party packages for Markdown inputs",
+  "tested_python": "3.12.14",
+  "optional_pdf_parser": "pypdf 6.10.0",
+  "doc_authoring": "python-docx 1.2.0; reportlab 4.4.9; Pillow 12.3.0",
+  "browser_gui_verified": false,
+  "browser_javascript_syntax_checked": true,
+  "unit_http_tests_passed": 19,
+  "pretrained_model_executed": false,
+  "docker_executed": false
+}

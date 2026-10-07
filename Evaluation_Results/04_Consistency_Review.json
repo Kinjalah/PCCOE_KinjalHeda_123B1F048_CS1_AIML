@@ -1,0 +1,18 @@
+{
+  "version": "v2",
+  "findings": [
+    {
+      "rule": "unit_mismatch",
+      "entity": "SteeringAngle",
+      "details": "Producer unit rad differs from consumer unit deg",
+      "citation": "SYN-HLD-001:v2:p4:c1"
+    }
+  ],
+  "review_required": true,
+  "rules": [
+    "unknown_component",
+    "unknown_interface",
+    "unit_mismatch"
+  ],
+  "limitation": "Only declared records are checked. No AUTOSAR schema/conformance or safety certification is performed."
+}

@@ -1,0 +1,17 @@
+{
+  "backend": "extractive",
+  "generation_model": null,
+  "embedding_model": null,
+  "ollama_url": "http://127.0.0.1:11434",
+  "model_timeout_seconds": 60,
+  "vector_store": "Local JSON sparse vector index with exact cosine search",
+  "embedding_method": "Corpus-fitted TF-IDF, logarithmic TF, smoothed IDF, L2 normalization",
+  "top_k": 3,
+  "retrieval_threshold": 0.08,
+  "chunk_max_characters": 1800,
+  "chunk_overlap": 0,
+  "generation_temperature": 0,
+  "hosting": "loopback-only local Python server",
+  "pretrained_model_run_verified": false,
+  "submission_status": "offline baseline verified; pretrained mode not executed"
+}

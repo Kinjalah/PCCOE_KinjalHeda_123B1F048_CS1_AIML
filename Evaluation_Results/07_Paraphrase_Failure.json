@@ -1,0 +1,7 @@
+{
+  "question": "Which component receives car velocity?",
+  "expected_behaviour": "answer with SteeringController",
+  "actual_status": "abstained",
+  "reason": "The requested terms are not supported by the selected source version: car, receives, velocity.",
+  "claims": []
+}

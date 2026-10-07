@@ -1,0 +1,49 @@
+{
+  "v1": {
+    "Component": [
+      "VehicleStateProvider",
+      "SteeringController",
+      "SafetyMonitor"
+    ],
+    "Interface": [
+      "VehicleSpeedIf",
+      "SteeringAngleIf"
+    ],
+    "Signal": [
+      "VehicleSpeed",
+      "SteeringAngle"
+    ],
+    "Port": [
+      "SpeedOut",
+      "SpeedIn",
+      "AngleOut",
+      "AngleIn"
+    ]
+  },
+  "v2": {
+    "Component": [
+      "VehicleStateProvider",
+      "SteeringController",
+      "SafetyMonitor",
+      "DiagnosticManager"
+    ],
+    "Interface": [
+      "VehicleSpeedIf",
+      "SteeringAngleIf",
+      "DiagnosticStatusIf"
+    ],
+    "Signal": [
+      "VehicleSpeed",
+      "SteeringAngle",
+      "FaultStatus"
+    ],
+    "Port": [
+      "SpeedOut",
+      "SpeedIn",
+      "AngleOut",
+      "AngleIn",
+      "FaultOut",
+      "FaultIn"
+    ]
+  }
+}

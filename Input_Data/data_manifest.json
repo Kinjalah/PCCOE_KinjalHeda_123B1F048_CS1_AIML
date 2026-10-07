@@ -1,0 +1,33 @@
+{
+  "dataset_id": "AUTOARCH-SYN-001",
+  "purpose": "Synthetic educational benchmark; not production/standards evidence",
+  "created_on": "2026-10-07",
+  "generator": "ChatGPT Codex assistance",
+  "approval_status": "synthetic input; faculty scope approval pending",
+  "documents": [
+    {
+      "document_id": "SYN-HLD-001",
+      "version": "v1",
+      "file": "AutoArch_AI_HLD_Synthetic_v1.md",
+      "synthetic": true,
+      "approved": false,
+      "sha256": "331939b7e52841cd70235c0501bc7db021be3b76f3922973064a67647295a496",
+      "size_bytes": 2878,
+      "format": "UTF-8 Markdown; seven sections mapped to seven generated PDF pages",
+      "pdf_file": "AutoArch_AI_HLD_Synthetic_v1.pdf",
+      "pdf_sha256": "e009a0813dee977201aa4d4f2a007265fc2c8ed44a435f0d08d9ee6338e83148"
+    },
+    {
+      "document_id": "SYN-HLD-001",
+      "version": "v2",
+      "file": "AutoArch_AI_HLD_Synthetic_v2.md",
+      "synthetic": true,
+      "approved": false,
+      "sha256": "2a98ceb55a75bcd976b39ec66eb528859770095e89e90e63d39d895a08e208ff",
+      "size_bytes": 3645,
+      "format": "UTF-8 Markdown; seven sections mapped to seven generated PDF pages",
+      "pdf_file": "AutoArch_AI_HLD_Synthetic_v2.pdf",
+      "pdf_sha256": "f0701838675d29ca0cee989c0217648c8fa3b535b2e4a30ffaeb043b3fc9ac29"
+    }
+  ]
+}

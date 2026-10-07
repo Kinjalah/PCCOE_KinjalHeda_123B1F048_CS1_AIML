@@ -1,0 +1,24 @@
+{
+  "question": "What are the producer and consumer units of SteeringAngle?",
+  "backend": "extractive",
+  "status": "answered",
+  "claims": [
+    {
+      "text": "Signal: SteeringAngle | Producer: SteeringController | Consumer: SafetyMonitor | Interface: SteeringAngleIf | Type: float32 | ProducerUnit: rad | ConsumerUnit: deg | PeriodMs: 10",
+      "citation": "SYN-HLD-001:v2:p4:c1"
+    },
+    {
+      "text": "Signal: VehicleSpeed | Producer: VehicleStateProvider | Consumer: SteeringController | Interface: VehicleSpeedIf | Type: float32 | ProducerUnit: km_per_h | ConsumerUnit: km_per_h | PeriodMs: 10",
+      "citation": "SYN-HLD-001:v2:p4:c1"
+    },
+    {
+      "text": "Known review seed: SteeringAngle has producer unit rad and consumer unit deg; this intentional inconsistency tests the unit-mismatch rule.",
+      "citation": "SYN-HLD-001:v2:p7:c1"
+    },
+    {
+      "text": "Requirement: REQ-003 | Text: SafetyMonitor shall consume SteeringAngle through SteeringAngleIf.",
+      "citation": "SYN-HLD-001:v2:p7:c1"
+    }
+  ],
+  "review_required": true
+}
